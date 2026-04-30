@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Flux</title>
+
   <style>
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #0f172a;
       color: #e2e8f0;
       line-height: 1.6;
+      overflow-x: hidden;
+
+      background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #6366f1);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
@@ -19,9 +30,34 @@
       padding: 40px 20px;
     }
 
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 16px;
+
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.4),
+        0 0 40px rgba(56, 189, 248, 0.15);
+
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     h1 {
       font-size: 32px;
       margin-bottom: 10px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .date {
@@ -47,13 +83,6 @@
       margin-bottom: 5px;
     }
 
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
     a {
       color: #38bdf8;
       text-decoration: none;
@@ -68,8 +97,15 @@
       font-size: 14px;
       color: #94a3b8;
     }
+
+    /* subtle floating effect */
+    .card:hover {
+      transform: translateY(-3px);
+      transition: transform 0.3s ease;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="card">
